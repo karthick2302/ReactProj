@@ -1,0 +1,135 @@
+:root {
+  --color-main: #333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-main);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #323232;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+
+form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+h2,
+h1 {
+  text-align: center;
+  margin: 2em;
+  color: rgb(2, 4, 27);
+
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+  /* Adds space above the element */
+  margin-bottom: 20px;
+}
+
+.form-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.text-inputs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+button {
+  border-radius: 19px;
+  background: #f2f6f6;
+  box-shadow: 1px 1px 2px #0f0d0d,
+    -1px -1px 2px #090808;
+}
+
+.button-container button {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.check-container {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  --input-focus: #2d8cf0;
+  --input-out-of-focus: #ccc;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+  position: relative;
+  cursor: pointer;
+}
+
+.check-container input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkmark {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--input-out-of-focus);
+  transition: all 0.3s;
+}
+
+.check-container input:checked~.checkmark {
+  background-color: var(--input-focus);
+}
+
+.checkmark:after {
+  content: "";
+  width: 7px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  display: none;
+  border: solid var(--bg-color);
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.check-container input:checked~.checkmark:after {
+  display: block;
+}
+
+.check-label {
+  margin-left: 10px;
+}
+
+.image-background {
+  background-image: url('https://d1nslcd7m2225b.cloudfront.net/Pictures/1024x536/1/5/5/1221155_MINONSG001_DS_S0350P0530_L_COMPO_RENDER_0183R.jpg');
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+}
