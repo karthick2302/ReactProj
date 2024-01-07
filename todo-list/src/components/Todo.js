@@ -25,6 +25,7 @@ const Todo = () => {
         deleteSelectedTasks,
         moveToTop,
     } = todoState()
+    const [taskListId, setTaskListId] = useState(1)
 
     return (
         < >
@@ -36,7 +37,7 @@ const Todo = () => {
                 onSubmit={textEntered} />
 
             <br />
-            <TaskList task={tasklist} deleteSelectedTasks={deleteSelectedTasks} moveToTop={moveToTop} />
+            <TaskList key={taskListId} task={tasklist} deleteSelectedTasks={deleteSelectedTasks} moveToTop={moveToTop} resetId={() => setTaskListId(taskListId + 1)} />
             <br />
             <br />
         </>
