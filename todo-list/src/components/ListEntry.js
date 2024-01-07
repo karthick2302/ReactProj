@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-const ListEntry = ({ onSubmit }) => {
-    const [inputText, setInputText] = useState('')
-
+const ListEntry = (props) => {
+    const [inputText, setInputText] = useState(props.editTask)
     const handleSubmit = (event) => {
-        // event.perventDefault();
-        onSubmit(inputText)
+        props.onSubmit(inputText)
         setInputText('')
+        props.setEditTask('')
     }
 
     return (
@@ -14,6 +13,7 @@ const ListEntry = ({ onSubmit }) => {
             <input
                 style={{}}
                 className="text-inputs"
+                id="listInput"
                 type="text"
                 value={inputText}
                 onChange={event => setInputText(event.target.value)}
