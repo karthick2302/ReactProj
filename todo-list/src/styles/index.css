@@ -37,7 +37,9 @@ h1 {
 
 }
 
-.form-button {
+.form-button,
+.delete-button,
+.edit-button {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -48,6 +50,16 @@ h1 {
 
 .form-button:hover {
   background-color: black;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: rgb(208, 31, 31);
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: rgb(205, 93, 29);
   color: white;
 }
 

@@ -1,4 +1,5 @@
 import image1 from "./undraw_order_ride_re_372k.svg"
+import image2 from "./taxi.svg"
 import Navbar from "./navbar.js";
 import { Link } from "react-router-dom"
 function App() {

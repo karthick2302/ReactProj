@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const ListEntry = (props) => {
     const [inputText, setInputText] = useState(props.editTask)
     const handleSubmit = (event) => {
+        document.getElementById('editError').innerText = ''
         props.onSubmit(inputText)
         setInputText('')
         props.setEditTask('')

@@ -4,7 +4,7 @@ const DeleteSelected = (props) => {
 
     return (
         <>
-            <button className="form-button" onClick={props.deleteSelected} style={{ float: "right" }}>Delete selected</button>
+            <button className="delete-button" onClick={props.deleteSelected} style={{ float: "right" }}>Delete selected</button>
         </>
     )
 }

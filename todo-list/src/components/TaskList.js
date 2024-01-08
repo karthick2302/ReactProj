@@ -11,13 +11,14 @@ const TaskList = (props) => {
     }
     const handleEdit = () => {
         if (selTask.length == 1) {
-            // console.log(document.getElementById('listInput'))
-            // document.getElementById('listInput').value = selTask[0]
+            document.getElementById('editError').innerText = ''
             props.editATask(selTask[0])
             props.deleteSelectedTasks(selTask)
             console.log(selTask)
             setSelTask([])
             props.resetId()
+        } else {
+            document.getElementById('editError').innerText = 'Please select one task at a time to edit 😊'
         }
     }
     const selectedTask = task => {
@@ -29,20 +30,32 @@ const TaskList = (props) => {
         console.log('unselected', task)
     }
     const deleteSelected = () => {
-        props.deleteSelectedTasks(selTask)
-        console.log(selTask)
-        setSelTask([])
-        props.resetId()
+        if (selTask.length == 0) {
+            document.getElementById('editError').innerText = 'Please select some task to perform this operation'
+        } else {
+            document.getElementById('editError').innerText = ''
+            props.deleteSelectedTasks(selTask)
+            console.log(selTask)
+            setSelTask([])
+            props.resetId()
+        }
     }
     const moveToTop = () => {
-        props.moveToTop(selTask)
-        console.log(selTask)
-        setSelTask([])
-        props.resetId()
+        if (selTask.length == 0) {
+            document.getElementById('editError').innerText = 'Please select some task to perform this operation'
+        } else {
+            document.getElementById('editError').innerText = ''
+            props.moveToTop(selTask)
+            console.log(selTask)
+            setSelTask([])
+            props.resetId()
+        }
     }
+
     return (
         <div>
-            <button className="form-button" style={{ float: "right" }} onClick={handleEdit}>Edit</button>
+
+            <button className="edit-button" style={{ float: "right" }} onClick={handleEdit}>Edit</button>
             {props.task.map((oneTask, index) => (
                 <div className="check-container">
                     <input
